@@ -1,0 +1,31 @@
+<DashBoard>:
+
+    FloatLayout:
+
+        MDLabel:
+            id: sub_title
+            pos_hint: {"center_x": 0.5, "top": .98}
+            size_hint: (.5, .2)
+            theme_text_color: "Primary"
+            font_style: "H5"
+            halign: "center"
+            text: root.sub_title
+
+        MDTextField:
+            id: binary_number
+            pos_hint: {"x": .35, "top": .8}
+            size_hint: (.3, .1)
+            halign: "center"
+            hint_text: root.hint_binary_number
+
+        MDRaisedButton:
+            pos_hint: {"x": .35, "y": .55}
+            size_hint: (.3, .1)
+            text: "Convertir"
+            on_release: root.is_binary(binary_number.text)
+
+        MDLabel:
+            id: solution
+            pos_hint: {"center_x": .5, "top": .4}
+            size_hint: (.5, .1)
+            halign: "center"
