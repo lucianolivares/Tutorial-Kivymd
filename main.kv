@@ -1,6 +1,6 @@
 # Incluir Archivos kivy para las pantallas
 #:include kv/dashboard.kv
-#:include kv/firstscreen.kv
+#:include kv/settingsscreen.kv
 
 #Layout Principal Que debe contener una ScreenManager y un MDNavigationDrawer
 NavigationLayout:
@@ -31,11 +31,10 @@ NavigationLayout:
                     DashBoard:
                         id: dashboard
                         name: "dashboard"
-
                     # Segunda pantalla
-                    FirstScreen:
-                        id: first_screen
-                        name: "first_screen"
+                    SettingsScreen:
+                        id: settings_screen
+                        name: "settings_screen"
 
     # Navegador Lateral
     MDNavigationDrawer:
@@ -49,8 +48,6 @@ NavigationLayout:
 
             # Primer Widget
             Image:
-                size_hint: None, None
-                size: "200dp", "200dp"
                 source: "resources/logo.png"
 
             # ScrollView servirá en caso de tener muchas pantallas(Botones)
@@ -71,9 +68,9 @@ NavigationLayout:
 
                     # Botón para la segunda pantalla
                     OneLineIconListItem:
-                        text: "Primera Pantalla"
+                        text: "Ajustes"
                         on_release:
-                            screen_manager.current = "first_screen"
+                            screen_manager.current = "settings_screen"
                             nav_drawer.set_state()
                         IconLeftWidget:
-                            icon: "cart"
+                            icon: "settings"
