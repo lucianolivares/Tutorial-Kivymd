@@ -1,16 +1,21 @@
 # Importar librerías
 from kivymd.app import MDApp
 from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
 
 
-# Importar Pantallas
-from baseclass.dashboard import DashBoard
-from baseclass.settingsscreen import SettingsScreen
+# Pantalla Principal
+class DashBoard(Screen):
+    pass
+
+
+# Segunda Pantalla
+class FirstScreen(Screen):
+    pass
 
 
 # Inicialización de la APP
 class MyApp(MDApp):
-
     # Constructor
     def build(self):
         # Ajustes adicionales
