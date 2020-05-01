@@ -7,7 +7,7 @@ class SettingsScreen(Screen):
         super().__init__(**kw)
         self.app = MDApp.get_running_app()
 
-    def on_enter(self, *args):
+    def on_pre_enter(self, *args):
         self.app.title = "Ajustes"
 
     def change_mode(self, checkbox, value):
