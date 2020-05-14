@@ -3,8 +3,8 @@ from kivymd.app import MDApp
 
 
 class SettingsScreen(Screen):
-    def __init__(self, **kw):
-        super().__init__(**kw)
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.app = MDApp.get_running_app()
 
     def on_pre_enter(self, *args):

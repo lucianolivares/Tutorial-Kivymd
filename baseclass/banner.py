@@ -13,20 +13,26 @@ class Banner(FloatLayout):
         super().__init__()
 
         with self.canvas.before:
+            # Setting background of banner in a scroll screen
             Color(rgba=(0, .4, 0, 0.1))
             self.rect = RoundedRectangle(radius=[(40.0, 40.0), (40.0, 40.0), (40.0, 40.0), (40.0, 40.0)])
         self.bind(pos=self.update_rect, size=self.update_rect)
 
+        # Nombre de la operación a agregar
         self.operation = kwargs["operation"]
 
         self.title = MDLabel(text=kwargs["title"],
                              pos_hint={"center_x": .5, "top": .9}, size_hint=(.5, .3),
                              theme_text_color="Primary", font_style="H6", halign="center")
+
         self.text_field = MDTextFieldRect(pos_hint={"center_x": .25, "center_y": .4}, size_hint=(.20, .20),
                                           hint_text="Ingresar Valor", halign="center")
+
         self.button = MDIconButton(on_release=self.ejecutar,
                                    pos_hint={"center_x": .5, "center_y": .4}, size_hint=(.2, .3),
-                                   icon="arrow-right-bold")
+                                   icon="arrow-right-bold",
+                                   )
+
         self.result = MDLabel(pos_hint={"center_x": .75, "center_y": .4}, size_hint=(.2, .5),
                               halign="center")
 
@@ -99,6 +105,7 @@ class Banner(FloatLayout):
             temp += string[ind]
         self.result.text = str(temp)
 
+    # Setting background banner
     def update_rect(self, *args):
         self.rect.pos = self.pos
         self.rect.size = self.size

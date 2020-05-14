@@ -1,0 +1,31 @@
+<PickersScreen>
+    GridLayout:
+        cols: 2
+        orientation: "vertical"
+
+        MDIconButton:
+            size_hint: (.3, .33)
+            icon: "calendar"
+            on_release: root.show_date_picker()
+
+        MDLabel:
+            id: fecha
+            text: "Seleccione una fecha"
+
+        MDIconButton:
+            size_hint: (.3, .33)
+            icon: "clock"
+            on_release: root.show_time_picker()
+
+        MDLabel:
+            id: hora
+            text: "Seleccione una hora"
+
+        MDIconButton:
+            size_hint: (.3, .33)
+            icon: "border-color"
+            on_release: root.show_theme_picker()
+
+        MDLabel:
+            id: tema
+            text: "Seleccione una Tema"

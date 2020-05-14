@@ -1,24 +1,18 @@
-# Importar librerías
 from kivymd.app import MDApp
 from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
 
 
-# Importar Pantallas
 from baseclass.dashboard import DashBoard
 from baseclass.settingsscreen import SettingsScreen
+from baseclass.pickersscreen import PickersScreen
 
 
-# Inicialización de la APP
 class MyApp(MDApp):
-
-    # Constructor
     def build(self):
-        # Ajustes adicionales
-        self.title = "Mi Primera App"
+        self.title = ""
         self.theme_cls.primary_palette = "Green"
-        # Carga del archivo kivy
         return Builder.load_file("main.kv")
 
 
-# Ejecutar App
 MyApp().run()
