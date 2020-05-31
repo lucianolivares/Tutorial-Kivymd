@@ -1,6 +1,7 @@
 #: include kv/dashboard.kv
 #: include kv/settingsscreen.kv
 #: include kv/pickersscreen.kv
+#: include kv/suggestionsscreen.kv
 
 
 NavigationLayout:
@@ -29,6 +30,9 @@ NavigationLayout:
                     PickersScreen:
                         id: pickers_screen
                         name: "pickers_screen"
+                    SuggestionsScreen:
+                        id: suggestions_screen
+                        name: "suggestions_screen"
 
     MDNavigationDrawer:
         id: nav_drawer
@@ -61,6 +65,14 @@ NavigationLayout:
                             nav_drawer.set_state()
                         IconLeftWidget:
                             icon: "calendar-edit"
+
+                    OneLineIconListItem:
+                        text: "Sugerencias"
+                        on_release:
+                            screen_manager.current = "suggestions_screen"
+                            nav_drawer.set_state()
+                        IconLeftWidget:
+                            icon: "account-card-details"
 
                     OneLineIconListItem:
                         text: "Ajustes"

@@ -24,11 +24,12 @@ class PickersScreen(Screen):
         date_dialog.open()
 
     def show_time_picker(self):
-        '''Open time picker dialog.'''
+        """Open time picker dialog."""
         time_dialog = MDTimePicker()
         time_dialog.bind(time=self.get_time)
         time_dialog.open()
 
-    def show_theme_picker(self):
+    @staticmethod
+    def show_theme_picker():
         theme_dialog = MDThemePicker()
         theme_dialog.open()

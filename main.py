@@ -6,6 +6,7 @@ from kivy.uix.screenmanager import Screen
 from baseclass.dashboard import DashBoard
 from baseclass.settingsscreen import SettingsScreen
 from baseclass.pickersscreen import PickersScreen
+from baseclass.suggestionsscreen import SuggestionsScreen
 
 
 class MyApp(MDApp):
