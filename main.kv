@@ -1,83 +1,45 @@
-#: include kv/dashboard.kv
-#: include kv/settingsscreen.kv
-#: include kv/pickersscreen.kv
-#: include kv/suggestionsscreen.kv
-
-
+#Layout Principal Que debe contener una ScreenManager y un MDNavigationDrawer
 NavigationLayout:
     id: nav_layout
 
+    #Screen Manager Requerido para poder tener la barra de herramientas
     ScreenManager:
 
+        # Esta Screen para contener el BoxLayout
         Screen:
 
+            # Dentro de una distribución de caja agregamos la barra de herramientas
+            # y el screen manager para cambiar de Pantallas
             BoxLayout:
                 orientation: 'vertical'
 
+                # Barra de herramientas en la parte superior
                 MDToolbar:
                     title: app.title
                     elevation: 10
-                    left_action_items: [["menu", lambda x: nav_drawer.set_state()]]
+                    left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
 
+                # ScreenManager principal
                 ScreenManager:
                     id: screen_manager
-                    DashBoard:
-                        id: dashboard
-                        name: "dashboard"
-                    SettingsScreen:
-                        id: settings_screen
-                        name: "settings_screen"
-                    PickersScreen:
-                        id: pickers_screen
-                        name: "pickers_screen"
-                    SuggestionsScreen:
-                        id: suggestions_screen
-                        name: "suggestions_screen"
 
+    # Navegador Lateral
     MDNavigationDrawer:
         id: nav_drawer
 
+        # Tipo de distribución del espacio
         BoxLayout:
             orientation: 'vertical'
             padding: "8dp"
             spacing: "8dp"
-
+            # Primer Widget
             Image:
-
+                size_hint_y: .3
                 source: "resources/logo.png"
 
+            # ScrollView servirá en caso de tener muchas pantallas(Botones)
             ScrollView:
 
+                # Este tipo de widget nos servirá para poder agregar los botones con etiquetas
                 MDList:
-
-                    OneLineIconListItem:
-                        text: "DashBoard"
-                        on_release:
-                            screen_manager.current = "dashboard"
-                            nav_drawer.set_state()
-                        IconLeftWidget:
-                            icon: "view-dashboard"
-
-                    OneLineIconListItem:
-                        text: "Pickers"
-                        on_release:
-                            screen_manager.current = "pickers_screen"
-                            nav_drawer.set_state()
-                        IconLeftWidget:
-                            icon: "calendar-edit"
-
-                    OneLineIconListItem:
-                        text: "Sugerencias"
-                        on_release:
-                            screen_manager.current = "suggestions_screen"
-                            nav_drawer.set_state()
-                        IconLeftWidget:
-                            icon: "account-card-details"
-
-                    OneLineIconListItem:
-                        text: "Ajustes"
-                        on_release:
-                            screen_manager.current = "settings_screen"
-                            nav_drawer.set_state()
-                        IconLeftWidget:
-                            icon: "settings"
+                    id: nav_list

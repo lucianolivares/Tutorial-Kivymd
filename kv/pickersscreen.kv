@@ -4,26 +4,26 @@
         orientation: "vertical"
 
         MDIconButton:
-            size_hint: (.3, .33)
-            icon: "calendar"
+            size_hint: (.3, .5)
+            icon:"calendar"
             on_release: root.show_date_picker()
 
         MDLabel:
             id: fecha
-            text: "Seleccione una fecha"
+            text: "Seleccione una Fecha"
 
         MDIconButton:
-            size_hint: (.3, .33)
-            icon: "clock"
+            size_hint: (.3, .5)
+            icon:"clock"
             on_release: root.show_time_picker()
 
         MDLabel:
             id: hora
-            text: "Seleccione una hora"
+            text: "Seleccione una Hora"
 
         MDIconButton:
-            size_hint: (.3, .33)
-            icon: "border-color"
+            size_hint: (.3, .5)
+            icon:"border-color"
             on_release: root.show_theme_picker()
 
         MDLabel:

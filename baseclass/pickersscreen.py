@@ -5,7 +5,6 @@ from datetime import datetime
 
 
 class PickersScreen(Screen):
-
     def get_date(self, date):
         self.ids["fecha"].text = date.strftime("%d/%m/%Y")
 
@@ -13,13 +12,12 @@ class PickersScreen(Screen):
         self.ids["hora"].text = time.strftime("%H:%M")
 
     def show_date_picker(self):
-        min_date = datetime.strptime("11:05:2020", "%d:%m:%Y").date()
-        max_date = datetime.strptime("17:05:2020", "%d:%m:%Y").date()
-
+        min_date = datetime.strptime("2020:05:11", '%Y:%m:%d').date()
+        max_date = datetime.strptime("2020:05:17", '%Y:%m:%d').date()
         date_dialog = MDDatePicker(
             callback=self.get_date,
             min_date=min_date,
-            max_date=max_date
+            max_date=max_date,
         )
         date_dialog.open()
 
