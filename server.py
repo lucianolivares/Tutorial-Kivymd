@@ -11,7 +11,7 @@ stream = ScreenGear().start()
 options = {'flag': 0, 'copy': False, 'track': False, 'compression_param': cv2.IMREAD_COLOR}
 
 # Definir Netgear server
-server = NetGear(address="192.168.20.33", port="5454", protocol='tcp', pattern=1, logging=True, **options)
+server = NetGear(address="192.168.XX.XX", port="5454", protocol='tcp', pattern=1, logging=True, **options)
 
 while True:
     try:
