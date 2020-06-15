@@ -10,6 +10,7 @@ from baseclass.dashboard import DashBoard
 from baseclass.settingsscreen import SettingsScreen
 from baseclass.pickersscreen import PickersScreen
 from baseclass.suggestionsscreen import SuggestionsScreen
+from baseclass.streamscreen import StreamScreen
 from baseclass.classes import ListIcon
 
 
@@ -22,6 +23,7 @@ class MyApp(MDApp):
             DashBoard: ("dashboard", "DashBoard", "view-dashboard"),
             PickersScreen: ("pickers_screen", "Pickers", "calendar-edit"),
             SuggestionsScreen: ("suggestions_screen", "Sugerencias", "account-card-details"),
+            StreamScreen: ("stream_screen", "Stream", "video-wireless"),
             SettingsScreen: ("settings_screen", "Ajustes", "settings")
         }
 
