@@ -15,7 +15,7 @@ options = {'flag': 0, 'copy': False, 'track': False, 'compression_format': '.jpg
                                  cv2.IMWRITE_JPEG_PROGRESSIVE, True,
                                  cv2.IMWRITE_JPEG_OPTIMIZE, True, ]}
 
-client = NetGear(address='192.168.20.33', port='5454', protocol='tcp', pattern=1,
+client = NetGear(address='192.168.XX.XX', port='5454', protocol='tcp', pattern=1,
                  receive_mode=True, logging=True, **options)
 
 
